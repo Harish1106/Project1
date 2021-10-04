@@ -1,25 +1,36 @@
 import java.util.*;
 import java.io.File;
 import java.io.IOException;
+import java.lang.StackWalker.Option;
+import java.net.SocketOptions;
 
 public class SelfProject {
 	public static void main(String args[]) throws IOException,NoSuchElementException {
 
+	//	("LockedMe","Harish Kumar Dwivedi");
 		int choice = -1;
-
+		System.out.println("---------------------------------------------------------------------\n"+
+				"  Welcome to LockedMe \n"+	
+				"  Developer Name : Harish Kumar Dwivedi \n"+
+				"---------------------------------------------------------------------\n");
 
 		do{
 
 			Scanner s= new Scanner(System.in);
 			System.out.println("1.files name");
-			System.out.println("2.Add file");
-			System.out.println("3.Delete a file");
-			System.out.println("4.file search");		
+			System.out.println("2.More options");
 			System.out.println("0.Exist");
 			System.out.println("enter your choice : ");
 			choice = s.nextInt();
-
-
+			if(choice==2) {
+				System.out.println("2.Add file");
+				System.out.println("3.Delete a file");
+				System.out.println("4.file search");
+				System.out.println("5.Main Menu");
+				System.out.println("enter your choice : ");
+				choice = s.nextInt();
+			}
+			
 			switch(choice) {
 
 			case 1: //search for all file in the directory 
@@ -127,6 +138,7 @@ public class SelfProject {
 
 			}
 		}while (choice !=0);
+		System.out.println("Programme Ended! Thank You!");
 	}
 }
 
